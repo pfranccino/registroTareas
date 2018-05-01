@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-
+const color = require('colors')
 
 let saveData = [];
 
@@ -11,7 +11,7 @@ function writeData() {
         if (err) {
             throw new Error('No se pudo grabar', err);
         } else {
-            console.log('Tarea generada')
+            console.log('Tarea generada'.green);
         }
     });
 }

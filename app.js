@@ -4,6 +4,8 @@ const {
     toList
 } = require('./toDo/toDo')
 
+const color = require('colors')
+
 let comando = argv._[0];
 
 
@@ -17,15 +19,15 @@ switch (comando) {
     case 'listar':
         let works = toList()
         for (let work of works) {
-            console.log('-----------------------')
+            console.log('-----------------------'.red);
             console.log('Titulo:', work.descripcion);
-            console.log('Estado: ', work.estado);
-            console.log('-----------------------')
+            console.log('Estado:', work.estado);
+            console.log('-----------------------'.red);
         }
         break;
 
     case 'actualizar':
-        console.log('Actualizar cosas por hacer')
+        console.log('Actualizar cosas por hacer');
         break;
 
 }
