@@ -1,7 +1,8 @@
 const argv = require('./config/yargs').argv;
 const {
     createWork,
-    toList
+    toList,
+    update
 } = require('./toDo/toDo')
 
 const color = require('colors')
@@ -27,7 +28,7 @@ switch (comando) {
         break;
 
     case 'actualizar':
-        console.log('Actualizar cosas por hacer');
+        update(argv.descripcion, argv.estado);
         break;
 
 }

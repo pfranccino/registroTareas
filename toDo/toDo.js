@@ -61,10 +61,25 @@ let toList = () => {
 }
 
 
+let update = (descripcion, estado) => {
+
+    loadData()
+
+    let index = saveData.findIndex(tarea => tarea.descripcion === descripcion);
+
+    if (index >= 0) {
+        saveData[index].estado = estado
+        saveDB();
+        return console.log("Tarea actualizada".blue);
+    } else {
+        return console.log("No se pudo actualizar tarea".red);
+    }
+}
+
+
 module.exports = {
     toList,
     createWork,
-    loadData,
-    writeData
+    update
 
 }

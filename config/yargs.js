@@ -4,7 +4,7 @@ const descripcion = {
     desc: 'descripcion de la tarea por hacer'
 }
 
-const completado = {
+const estado = {
     default: true,
     alias: 'c',
     desc: 'Permite cambiar el estado de la tarea'
@@ -17,7 +17,7 @@ const argv = require('yargs')
 
 .command('actualizar', 'Nos permitira actualizar nuestra lista de tareas', {
         descripcion,
-        completado
+        estado
 
     })
     .command('listar', 'Nos permite listar todas las tareas')
