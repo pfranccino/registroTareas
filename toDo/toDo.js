@@ -11,7 +11,7 @@ function writeData() {
         if (err) {
             throw new Error('No se pudo grabar', err);
         } else {
-            console.log('Tarea generada'.green);
+            console.log('Accion registrada'.green);
         }
     });
 }
@@ -60,6 +60,26 @@ let toList = () => {
     return saveData;
 }
 
+let deleteWork = (descripcion) => {
+
+    loadData();
+    let newSaveData = saveData.filter(work => {
+        return work.descripcion !== descripcion
+
+    });
+
+
+    if (newSaveData.length === saveData) {
+        console.log('No se ha eliminado la tarea'.red);
+    } else {
+        saveData = newSaveData;
+        console.log('Tarea eliminada'.red);
+        saveDB();
+    }
+
+
+}
+
 
 let update = (descripcion, estado) => {
 
@@ -77,9 +97,11 @@ let update = (descripcion, estado) => {
 }
 
 
+
 module.exports = {
     toList,
     createWork,
-    update
+    update,
+    deleteWork
 
 }
