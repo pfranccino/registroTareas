@@ -54,7 +54,6 @@ let createWork = (descripcion) => {
 
 }
 
-
 let toList = () => {
     loadData();
     return saveData;
@@ -98,10 +97,10 @@ let update = (descripcion, estado) => {
 
 
 
+
 module.exports = {
     toList,
     createWork,
     update,
     deleteWork
-
 }
